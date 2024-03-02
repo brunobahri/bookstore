@@ -1,7 +1,7 @@
 import factory
 
 from product.models import Category
-from product.moldels import Product
+from product.models import Product
 
 class CategoryFactory(factory.django.DjangoModelFactory):
     title =  factory.Faker('pystr')
