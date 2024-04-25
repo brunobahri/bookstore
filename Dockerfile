@@ -35,8 +35,7 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y \
         curl \
         build-essential \
-        libpq-dev gcc \
-    && pip install psycopg2
+        libpq-dev gcc
 
 # install poetry - respects $POETRY_VERSION & $POETRY_HOME
 RUN pip install "poetry==$POETRY_VERSION"
@@ -64,4 +63,3 @@ EXPOSE 8000
 
 # Command to run the application
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-
