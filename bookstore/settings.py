@@ -154,4 +154,5 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+allowed_hosts = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost")    
+ALLOWED_HOSTS = allowed_hosts.split(" ")
