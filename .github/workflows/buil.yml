@@ -24,6 +24,7 @@ jobs:
         python -m ensurepip
         python -m pip install --upgrade pip
         python -m pip install --upgrade poetry
+
     - name: View poetry --help
       run: poetry --help
 
@@ -32,6 +33,9 @@ jobs:
 
     - name: Install dependencies
       run: poetry install
+
+    - name: Set environment variables
+      run: echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> $GITHUB_ENV
 
     - name: Test
       run: |
