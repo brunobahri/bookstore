@@ -27,10 +27,13 @@ jobs:
     - name: View poetry --help
       run: poetry --help
 
+    - name: Update poetry lock file
+      run: poetry lock --no-update
+
     - name: Install dependencies
-      shell: bash
-      run: python -m poetry install
+      run: poetry install
 
     - name: Test
       run: |
         poetry run python manage.py test
+
